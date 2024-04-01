@@ -49,7 +49,7 @@ directory_split <- function(directory,keyword,
 
   lapply(seq_along(files_dir), function(xx) {
     tryCatch({
-      pdf_split(files_dir[xx], keyword = keyword,
+      keyword_split(files_dir[xx], keyword = keyword,
                 ignore_case = ignore_case,
                 keyword_combination = keyword_combination,
                 combine_pages = combine_pages,

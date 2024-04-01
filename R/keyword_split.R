@@ -27,18 +27,18 @@
 #' # Single keyword
 #' file <- system.file("extdata", "1406.4806.pdf", package = "pdfsplit")
 #' pdf_file <- file.path(getwd(), "output.pdf")
-#' pdf_split(file,keyword = "test", file_output = pdf_file)
+#' keyword_split(file,keyword = "test", file_output = pdf_file)
 #' unlink(pdf_file)
 #'
 #' # Multiple keywords
 #' file <- system.file("extdata", "1406.4806.pdf", package = "pdfsplit")
 #' pdf_file <- file.path(getwd(), "output.pdf")
-#' pdf_split(file,keyword = c("test","performance"),keyword_combination = "OR",
+#' keyword_split(file,keyword = c("test","performance"),keyword_combination = "OR",
 #'  file_output = pdf_file)
 #' unlink(pdf_file)
 #'
 #'
-pdf_split <- function(path, keyword, ignore_case = FALSE,
+keyword_split <- function(path, keyword, ignore_case = FALSE,
                       keyword_combination = "OR",
                       combine_pages = TRUE,
                       file_output = NULL){

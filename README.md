@@ -27,23 +27,23 @@ devtools::install_github("Mubarak-M/pdfsplit")
 ## Usage
 
 This package currently offers two functions that are beneficial to
-users. The first, `pdf_split`, is designed to extract page(s) based on
-keywords from a single PDF file. The second function, `directory_split`,
-performs a similar task but operates on an entire directory of PDF
-files.
+users. The first, `keyword_split`, is designed to extract page(s) based
+on keywords from a single PDF file. The second function,
+`directory_split`, performs a similar task but operates on an entire
+directory of PDF files.
 
-### Example with `pdf_split`
+### Example with `keyword_split`
 
 The package includes two PDF files sourced from
 [arXiv](https://arxiv.org/) for use as test cases. Here is an example
-demonstrating the use of the `pdf_split` function.
+demonstrating the use of the `keyword_split` function.
 
 #### Extract pages based on a single keyword
 
 ``` r
 file <- system.file("extdata", "1406.4806.pdf", package = "pdfsplit")
 pdf_file <- file.path(getwd(), "output.pdf")
-pdf_split(file,keyword = "test", file_output = pdf_file)
+keyword_split(file,keyword = "test", file_output = pdf_file)
 ```
 
 #### Extract pages based on a single keyword
@@ -51,7 +51,7 @@ pdf_split(file,keyword = "test", file_output = pdf_file)
 ``` r
 file <- system.file("extdata", "1406.4806.pdf", package = "pdfsplit")
 pdf_file <- file.path(getwd(), "output.pdf")
-pdf_split(file,keyword = c("test","performance"), file_output = pdf_file)
+keyword_split(file,keyword = c("test","performance"), file_output = pdf_file)
 ```
 
 ### Example with `directory_split`
