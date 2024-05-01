@@ -26,11 +26,12 @@ devtools::install_github("Mubarak-M/pdfsplit")
 
 ## Usage
 
-This package currently offers two functions that are beneficial to
+This package currently offers three functions that are beneficial to
 users. The first, `keyword_split`, is designed to extract page(s) based
 on keywords from a single PDF file. The second function,
 `directory_split`, performs a similar task but operates on an entire
-directory of PDF files.
+directory of PDF files. The third function, `keyword_pages`, allow users
+to identify the pdf pages where keywords are located.
 
 ### Example with `keyword_split`
 
@@ -66,6 +67,55 @@ directory.
 directory <- system.file("extdata", package = "pdfsplit")
 dir_outs <- file.path(getwd(),"output")
 directory_split(directory,keyword = "test", dir_output = dir_outs)
+```
+
+### Example with `keyword_pages`
+
+The `keyword_pages` function allows user to identify the pages a keyword
+is located in a pdf file.
+
+#### Single keyword
+
+``` r
+library(pdfsplit)
+file <- system.file("extdata", "1406.4806.pdf", package = "pdfsplit")
+keyword_pages(file, "test")
+#> $keyword
+#> [1] "test"
+#> 
+#> $pages
+#> [1]  3  5  8  9 11
+```
+
+#### Multiple keywords
+
+``` r
+file <- system.file("extdata", "1406.4806.pdf", package = "pdfsplit")
+keyword_pages(file, c("test","performance"))
+#> [[1]]
+#> [[1]]$keyword
+#> [1] "test"
+#> 
+#> [[1]]$pages
+#> [1]  3  5  8  9 11
+#> 
+#> 
+#> [[2]]
+#> [[2]]$keyword
+#> [1] "performance"
+#> 
+#> [[2]]$pages
+#> [1]  3  4 11 12
+```
+
+#### Multiple keywords (Simplified output)
+
+``` r
+file <- system.file("extdata", "1406.4806.pdf", package = "pdfsplit")
+keyword_pages(file, c("test","performance"), simplify = TRUE)
+#>       Keyword      pages
+#> 1        test 3,5,8,9,11
+#> 2 performance  3,4,11,12
 ```
 
 ## Limitations
