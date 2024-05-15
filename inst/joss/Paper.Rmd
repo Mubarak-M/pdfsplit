@@ -1,0 +1,45 @@
+---
+title: 'pdfsplit: An R Package for Extracting Pages From PDF Files Based on Keywords'
+tags:
+  - R
+  - Rsearch Synthesis
+  - Text Analysis
+authors:
+  - name: Mubarak O. Mojoyinola
+    affiliation: 1
+  - name: Brandon LeBeau
+    orcid: 0000-0002-1265-8761
+    affiliation: 1
+affiliations:
+ - name: University of Iowa
+   index: 1
+date: "`r Sys.Date()`"
+bibliography: paper.bib
+---
+
+# Summary
+
+**pdfsplit** is an R package [@R] that enables the extraction of pages from PDF files based on specified keywords. By leveraging the text extraction capabilities of the pdftools R package [@pdftools] and the page extraction capabilities of the qpdf R package [@qpdf], developed by rOpenSci, pdfsplit allows users to extract specific pages from PDF files directly within the R environment without the need for additional setup or dependencies.
+
+The package offers three main functions: 1) `keyword_split`, which extracts pages based on keywords from a single PDF file, 2) `directory_split`, which performs the same task but operates on an entire directory of PDF files, and 3) `keyword_pages`, which identifies the specific pages where the given keywords are located within a PDF file.
+
+# Statement of need
+
+The Portable Document Format (PDF), introduced by Adobe Systems in 1993, has gained widespread adoption and has become the dominant standard for various document types [@adha2021;@sayed2018data]. This is primarily due to the fact that PDF documents are completely platform-independent, operating system-independent, and software-independent [@sayed2018data]. Although these attributes streamline document management, the layout-focused structure, which emphasizes human readability, presents difficulties for additional machine processing [@khusro_methods_2015].
+
+The widespread use of PDF files has made them a crucial component of research and data analysis workflows. However, the challenges associated with processing PDF files are exacerbated in today's data-driven world, where efficient and comprehensive data analysis is essential for researchers across various disciplines.
+
+Extracting specific pages that contain relevant information from a PDF file is a common task in streamlining analysis process. This process involves identifying and extracting the most important pages from a multi-page PDF document, which can then be used for further analysis, such as research synthesis, text analysis, or natural language processing. By focusing on the essential pages, researchers can efficiently process the relevant data without the need to analyze the entire PDF file. 
+
+The R community has shown significant interest in developing tools for extracting pages from PDF files. Packages like staplr [@staplr] and qpdf [@qpdf] provide functionality to extract specific pages from a PDF document. However, these packages have limitations. They require users to know the exact page numbers they want to extract in advance, which can be inconvenient when dealing with large or unfamiliar documents. Additionally, the staplr package depends on the installation of an external software package to enable its PDF page splitting capabilities, adding an extra layer of complexity to the process.
+
+pdfsplit addresses these limitations by providing a lightweight and user-friendly solution for extracting pages from PDF files based on keywords within the R environment. By leveraging the text extraction capabilities of the pdftools package and the page extraction function in qpdf, pdfsplit eliminates the need for additional dependencies and offers a reproducible workflow through its script-based approach. This package has the potential to streamline the process of extracting relevant pages from PDF documents, making it more efficient and reproducible.
+
+# Limitations
+
+The package currently does not support scanned PDF files that require OCR (Optical Character Recognition) for text recognition.
+
+# Acknowledgements
+
+
+# References
