@@ -1,4 +1,4 @@
-#' Wrapper for pdf split function
+#' Wrapper for keyword_pages function
 #'
 #' This will apply the pdf_split function over all PDF files within a
 #' directory.

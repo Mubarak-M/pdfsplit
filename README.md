@@ -11,7 +11,7 @@
 The `pdfsplit` package provides functions for extracting pages from PDF
 files based on keyword(s). Using the
 [pdftools](https://github.com/ropensci/pdftools) package developed by
-[rOpenSci](https://ropensci.org/), pdf pages can be extracted from in R
+[rOpenSci](https://ropensci.org/), pdf pages can be extracted in R
 environment without the need for additional setup.
 
 ## Installation
@@ -59,7 +59,7 @@ keyword_split(file,keyword = c("test","performance"), file_output = pdf_file)
 
 The `directory_split` function enables users to extract pages using
 specified keywords across multiple PDF files in a single function call.
-It offers the same functionality found in the `pdf_split` function.
+It offers the same functionality found in the `keyword_split` function.
 Below is an example demonstrating the extraction within a single
 directory.
 
